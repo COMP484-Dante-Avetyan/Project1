@@ -1,28 +1,87 @@
+
+header {
+	margin-top: 200px;
+	text-align:center;
+	margin-bottom: 10rem;
+}
+
+li {
+	font-size: 1.4rem;
+	font-family: cursive;
+}
+
 html, body {
-	background: #663399; /* Beccapurple */
+	background: white;
 	margin: 0;
 }
 h1, h2, h3, h4, h5, h6, p {
 	margin: 0;
 	padding: 0;
+	text-align: center;
 }
+
 h1, h2, h3, h4, h5, h6 {
-	color: rgb(107, 107, 132);
+	color: black;
 }
+
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 60px;
+	background: black;
+	z-index: 1000;
+}
+
+.nav-list {
+	max-width: 700px;   /* controls how far links can spread */
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between; /* tighter than space-evenly */
+	align-items: center;
+	list-style: none;
+	padding: 0;
+	height: 100%;
+}
+
+.nav-list a {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+
+.fixed {
+	position:fixed;
+}
+
 body {
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 100%;
-	width: 80%;
+	width: 100%;
+	margin: 0;
 	margin-right: auto;
 	margin-left: auto;
-	padding: 2.5% 2.5% 0;
 	background: white;
 	line-height: 1.8;
 }
+
+section {
+	margin: 2rem auto;
+	text-align: center;
+	padding: 2rem;
+	max-width: 700px;
+	background: #f9f9f9;
+	border-radius: 10px;
+	box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+}
+
 h1 {
 	font: 1.6em Verdana, Geneva, sans-serif;
 	margin-bottom: .4em;
-	color: rgb(83, 104, 138);
 }
 h2 {
 	font: 3.2em Georgia, "Times New Roman", Times, serif;
@@ -47,18 +106,11 @@ pre {
 	border-left: 1em solid #A68048;
 	background: #666;
 	white-space: pre-wrap;
-	white-space: -moz-pre-wrap;
-	white-space: -pre-wrap;
-	white-space: -o-pre-wrap;
 	word-wrap: break-word;
 	width: 80%;
 }
-pre.wrong {
-	border-left-color: red;
-}
-pre.correct {
-	border-left-color: green;
-}
+
+
 dt {
 	font-style: italic;
 	font-size:1.2em;
@@ -70,9 +122,8 @@ table {
 	margin-top: 1em;
 }
 caption {
-	margin: 0;
 	padding: 0;
-	margin-bottom: 1em;
+	margin: 0 0 1em;
 	text-align: left;
 }
 td, th {
@@ -83,7 +134,6 @@ td, th {
 }
 header h2 {
 	padding-bottom: .2em;
-	border-bottom: 1px solid gray;
 }
 aside {
 	padding: 1em;
@@ -94,13 +144,19 @@ aside {
 aside h4 {
 	color: white;
 }
+
 footer {
-	border-top: 1px solid gray;
+	background: black;
+	color: white;
+	padding: 2rem 1rem;
 	text-align: center;
 	font-size: .8em;
 	line-height: 4em;
 	margin-top: 1em;
+	width: 100%;
+
 }
+
 blockquote {
 	font-style: italic;
 }
@@ -111,4 +167,111 @@ blockquote {
 .flowLeft {
 	float: left;
 	margin-right: 10px;
+}
+
+/* ---------- Steam-like shelves / carousel ---------- */
+.shelf{
+	max-width: 1100px;
+	margin: 2rem auto;
+	padding: 0;          /* we’ll style inner parts */
+	background: transparent; /* don’t force card background */
+	box-shadow: none;
+}
+
+.shelf-header{
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	padding: 0 0.25rem 0.75rem;
+}
+
+.shelf-header h3{
+	margin: 0;
+	text-align: left;
+}
+
+.shelf-link{
+	font-size: 0.9rem;
+	opacity: 0.85;
+	text-decoration: none;
+}
+
+.shelf-link:hover{
+	text-decoration: underline;
+}
+
+/* Horizontal carousel row */
+.carousel{
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: 220px;       /* tile width */
+	gap: 1rem;
+
+	overflow-x: auto;
+	padding: 0.5rem 0.25rem 1rem;
+
+	scroll-snap-type: x mandatory;
+	-webkit-overflow-scrolling: touch;
+}
+
+.carousel:focus{
+	outline: none;
+}
+
+.carousel > *{
+	scroll-snap-align: start;
+}
+
+/* Hide scrollbar (optional) */
+.carousel::-webkit-scrollbar{ height: 10px; }
+.carousel::-webkit-scrollbar-thumb{ background: rgba(0,0,0,0.2); border-radius: 10px; }
+.carousel::-webkit-scrollbar-track{ background: rgba(0,0,0,0.05); border-radius: 10px; }
+
+/* Game tiles */
+.game-card{
+	display: block;
+	color: inherit;
+	text-decoration: none;
+
+	background: #fff;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0px 2px 6px rgba(0,0,0,0.18);
+
+	transform: translateY(0);
+	transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.game-card:hover{
+	transform: translateY(-3px);
+	box-shadow: 0px 8px 18px rgba(0,0,0,0.22);
+}
+
+.game-card img{
+	width: 100%;
+	height: 310px;     /* “cover” look like Steam */
+	object-fit: cover;
+	display: block;
+}
+
+.game-meta{
+	padding: 0.85rem 0.9rem 1rem;
+	text-align: left;
+	line-height: 1.25;
+}
+
+.game-title{
+	font-weight: 700;
+}
+
+.game-sub{
+	font-size: 0.9rem;
+	opacity: 0.75;
+	margin-top: 0.25rem;
+}
+
+/* Smaller screens: narrower tiles */
+@media (max-width: 700px){
+	.carousel{ grid-auto-columns: 180px; }
+	.game-card img{ height: 260px; }
 }
