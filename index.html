@@ -3,7 +3,11 @@
 <head>
   <meta charset="utf-8">
   <title>Dante Avetyan — Home</title>
-  <link href="_css/styles.css" rel="stylesheet" type="text/css">
+
+  <!-- ATTRIBUTE 1: fetchpriority="high" -->
+  <!-- Used on the main stylesheet link to prioritize loading critical CSS -->
+  <!-- This ensures styling loads quickly for better user experience and faster render -->
+  <link href="_css/styles.css" rel="stylesheet" type="text/css" fetchpriority="high">
 </head>
 <body class="page-home">
 <header role="banner">
@@ -24,30 +28,116 @@
 
 <main role="main" class="container">
   <article role="article">
+
+    <!-- ELEMENT 1: <aside> -->
+    <!-- Used here to display site statistics and quick tips in a complementary sidebar -->
+    <!-- The aside element is semantically appropriate for tangentially related content -->
+    <aside class="home-stats" role="complementary">
+      <h3>Site Stats</h3>
+
+      <!-- ELEMENT 2: <meter> (First usage) -->
+      <!-- Displays art portfolio completion as a visual gauge -->
+      <!-- Meter is perfect for showing scalar measurements within a known range -->
+      <div class="stat-item">
+        <label for="art-progress">Portfolio Completion:</label>
+        <meter id="art-progress" value="100" min="0" max="100" low="30" high="70" optimum="100">65%</meter>
+        <output for="art-progress">100%</output>
+      </div>
+
+      <!-- ELEMENT 2: <meter> (Second usage) -->
+      <!-- Shows game library organization progress -->
+      <div class="stat-item">
+        <label for="game-organization">Game Library:</label>
+        <meter id="game-organization" value="8" min="8" max="220" low="25" high="75" optimum="100">42%</meter>
+        <output for="game-organization">8/220 Games Catalogued</output>
+      </div>
+
+      <!-- ELEMENT 2: <meter> (Third usage) -->
+      <!-- Indicates music library curation status -->
+      <div class="stat-item">
+        <label for="music-curation">Music Curation:</label>
+        <meter id="music-curation" value="31" min="0" max="40" low="10" high="35" optimum="30">88%</meter>
+        <output for="music-curation">77%</output>
+      </div>
+
+      <button id="statsInfoBtn" popovertarget="statsPopover">ℹ️ Learn More</button>
+
+      <!-- ATTRIBUTE 2: popover -->
+      <!-- Creates a native popover dialog with detailed stats explanation -->
+      <!-- Popover provides accessible, dismissible overlay content without JavaScript -->
+      <div id="statsPopover" popover>
+        <h4>About These Stats</h4>
+        <p><strong>Portfolio Completion:</strong> Percentage of planned artworks uploaded to the gallery.</p>
+        <p><strong>Game Library:</strong> Number of games documented with notes and playtime.</p>
+        <p><strong>Music Curation:</strong> Albums organized with listening notes and ratings.</p>
+        <button popovertarget="statsPopover" popovertargetaction="hide">Close</button>
+      </div>
+    </aside>
+
     <section>
       <h3>Art</h3>
       <p>Digital work made with a drawing tablet (Krita) and traditional work on paper with black ink.</p>
+      <p><a href="art.html">View Gallery →</a></p>
     </section>
 
     <section>
       <h3>Game Library</h3>
-      <p>A place to collect games I’m playing, recommendations, and notes.</p>
+      <p>Recent and favorites from my game collection.</p>
+      <p><a href="gamelibrary.html">Browse Library →</a></p>
     </section>
 
     <section>
       <h3>Music Library</h3>
-      <p>Albums, playlists, and music I’m studying or looping while I work.</p>
+      <p>Albums, playlists, and music I'm studying with or while at work.</p>
+      <p><a href="musiclibrary.html">Explore Music →</a></p>
     </section>
 
     <section>
       <h3>Fashion</h3>
       <p>Victorian-era fashion research presented like an art history book.</p>
+      <p><a href="fashion.html">Read Research →</a></p>
     </section>
+
+    <!-- Quick calculator for creative project time estimation -->
+    <section class="time-calculator">
+      <h3>Project Time Calculator</h3>
+      <p>Estimate total hours needed for your creative projects:</p>
+
+      <form oninput="totalTime.value = (parseInt(artHours.value || 0) + parseInt(codeHours.value || 0) + parseInt(researchHours.value || 0))">
+        <div class="calc-row">
+          <label for="artHours">Art/Design Hours:</label>
+          <input type="number" id="artHours" name="artHours" value="0" min="0" max="168">
+        </div>
+
+        <div class="calc-row">
+          <label for="codeHours">Coding Hours:</label>
+          <input type="number" id="codeHours" name="codeHours" value="0" min="0" max="168">
+        </div>
+
+        <div class="calc-row">
+          <label for="researchHours">Research Hours:</label>
+          <input type="number" id="researchHours" name="researchHours" value="0" min="0" max="168">
+        </div>
+
+        <p class="calc-result"><strong>Total Project Time: </strong>
+          <output name="totalTime" for="artHours codeHours researchHours">0</output> hours
+        </p>
+      </form>
+    </section>
+
   </article>
 </main>
+
+<div id="loadingOverlay" class="loading-overlay" inert>
+  <div class="spinner"></div>
+  <p>Loading content...</p>
+</div>
+
+<script src="script.js"></script>
 
 <footer role="contentinfo">
   <p><a href="http://www.csun.edu" title="csun.edu" target="_blank" rel="noopener">CSUN</a> 18111 Nordhoff St Northridge, CA 91330</p>
 </footer>
+
 </body>
 </html>

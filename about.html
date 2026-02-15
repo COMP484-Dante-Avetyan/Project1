@@ -24,16 +24,51 @@
 
 <main role="main" class="container">
   <article role="article">
+
     <section class="card">
       <h3>What I do</h3>
-      <p>I make art (digital + ink) and I build things with code. This site is a hub for my projects, references, and personal libraries.</p>
+      <p>I'm an artist by hobby, both digital with traditional techniques, and ink on paper, along with doing web app development when I can outside of university. This website is a hub for my projects, references, and personal libraries for my hobbies.</p>
     </section>
 
     <section class="card">
       <h3>Tools</h3>
-      <p><strong>Art:</strong> Krita, drawing tablet, ink fountain pen.<br>
-         <strong>Code:</strong> HTML/CSS, and whatever else I’m learning next.</p>
+      <dl>
+        <dt><strong>Art:</strong></dt>
+        <dd>Krita, XP-Pen drawing tablet, ink fountain pen.</dd>
+
+        <dt><strong>Languages:</strong></dt>
+        <dd>C++, Python, Python, SQL, JavaScript, HTML/CSS, Java</dd>
+
+        <dt><strong>Frameworks:</strong></dt>
+        <dd>React, Node.js, FastAPI, Flask.</dd>
+
+        <dt><strong>Developer Tools:</strong></dt>
+        <dd>Git, Jetbrains IDE Library (PyCharm, IntelliJ, Clion, Android Studio, and Webstorm which this project was made with)</dd>
+      </dl>
     </section>
+
+    <!-- Using aside for skills sidebar -->
+    <aside role="complementary">
+      <h3>Skills Progress</h3>
+
+      <div class="stat-item">
+        <label for="art-skill">Digital Art:</label>
+        <meter id="art-skill" value="85" min="0" max="100" low="40" high="70" optimum="100">85%</meter>
+        <output for="art-skill">Advanced (85%)</output>
+      </div>
+
+      <div class="stat-item">
+        <label for="code-skill">Web Development:</label>
+        <meter id="code-skill" value="60" min="0" max="100" low="40" high="70" optimum="100">60%</meter>
+        <output for="code-skill">Intermediate (60%)</output>
+      </div>
+
+      <div class="stat-item">
+        <label for="design-skill">UI/UX Design:</label>
+        <meter id="design-skill" value="70" min="0" max="100" low="40" high="70" optimum="100">70%</meter>
+        <output for="design-skill">Proficient (70%)</output>
+      </div>
+    </aside>
 
     <section class="card">
       <h3>Contact</h3>
@@ -41,6 +76,13 @@
     </section>
   </article>
 </main>
+
+<div id="loadingOverlay" class="loading-overlay" inert>
+  <div class="spinner"></div>
+  <p>Loading content...</p>
+</div>
+
+<script src="script.js"></script>
 
 <footer role="contentinfo">
   <p><a href="http://www.csun.edu" title="csun.edu" target="_blank" rel="noopener">CSUN</a> 18111 Nordhoff St Northridge, CA 91330</p>

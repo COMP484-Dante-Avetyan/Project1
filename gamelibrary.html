@@ -1,70 +1,316 @@
-<section class="card">
-  <h3>Game Library</h3>
-  <p class="muted">Scroll horizontally like Steam. Replace the image paths + titles.</p>
-</section>
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dante Avetyan — Game Library</title>
+  <link href="_css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body class="page-games">
+<header role="banner">
+  <nav>
+    <ul class="nav-list" aria-label="Site navigation">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="art.html">Art</a></li>
+      <li><a class="is-active" href="gamelibrary.html">Game Library</a></li>
+      <li><a href="musiclibrary.html">Music Library</a></li>
+      <li><a href="fashion.html">Fashion</a></li>
+    </ul>
+  </nav>
 
-<section class="shelf" aria-label="Recently played">
-  <div class="shelf-header">
-    <h3>Recently Played</h3>
-    <a class="shelf-link" href="#">View all</a>
-  </div>
+  <h2>Game Library</h2>
+  <h1>My Collection</h1>
+</header>
 
-  <div class="carousel" tabindex="0">
-    <a class="game-card" href="#">
-      <img src="images/games/game-01.jpg" alt="Game cover: Replace title">
-      <div class="game-meta">
-        <div class="game-title">Game Title</div>
-        <div class="game-sub">Last played: Today</div>
+<main role="main" class="container">
+  <article role="article">
+
+    <section class="card">
+      <h3>Game Library</h3>
+      <p class="muted">My gaming collection with play stats and favorites.</p>
+    </section>
+
+    <section class="shelf" aria-label="Recently played">
+      <div class="shelf-header">
+        <h3>Recently Played</h3>
+        <button class="shelf-link" popovertarget="recentGamesPopover">View all</button>
       </div>
-    </a>
 
-    <a class="game-card" href="#">
-      <img src="images/games/game-02.jpg" alt="Game cover: Replace title">
-      <div class="game-meta">
-        <div class="game-title">Game Title</div>
-        <div class="game-sub">6.4 hrs</div>
+      <div class="carousel" tabindex="0">
+        <!-- ATTRIBUTE: popover - Click any card to view enlarged cover -->
+        <button class="game-card" popovertarget="deadlock-img">
+          <img src="images/games/deadlock.jpg" alt="Deadlock game cover">
+          <div class="game-meta">
+            <div class="game-title">Deadlock</div>
+            <div class="game-sub">Last played: Today</div>
+          </div>
+        </button>
+
+        <button class="game-card" popovertarget="hades2-img">
+          <img src="images/games/hades2.jpg" alt="Hades II game cover">
+          <div class="game-meta">
+            <div class="game-title">Hades II</div>
+            <div class="game-sub">46.4 Hours</div>
+          </div>
+        </button>
+
+        <button class="game-card" popovertarget="rdr2-img">
+          <img src="images/games/rdr2.jpg" alt="Red Dead Redemption 2 game cover">
+          <div class="game-meta">
+            <div class="game-title">Red Dead Redemption II</div>
+            <div class="game-sub">13.6 Hours</div>
+          </div>
+        </button>
+
+        <button class="game-card" popovertarget="dmc-img">
+          <img src="images/games/dmchd.jpg" alt="Devil May Cry HD Collection game cover">
+          <div class="game-meta">
+            <div class="game-title">Devil May Cry HD Collection</div>
+            <div class="game-sub">10.9 Hours</div>
+          </div>
+        </button>
+
+        <button class="game-card" popovertarget="alice-img">
+          <img src="images/games/amr2.jpg" alt="Alice: Madness Returns game cover">
+          <div class="game-meta">
+            <div class="game-title">Alice: Madness Returns</div>
+            <div class="game-sub">12.8 Hours</div>
+          </div>
+        </button>
+
+        <button class="game-card" popovertarget="frostpunk-img">
+          <img src="images/games/frostpunk.jpg" alt="Frostpunk game cover">
+          <div class="game-meta">
+            <div class="game-title">Frostpunk</div>
+            <div class="game-sub">15.5 Hours</div>
+          </div>
+        </button>
+
+        <button class="game-card" popovertarget="bloodborne-img">
+          <img src="images/games/bloodborne.jpg" alt="Bloodborne game cover">
+          <div class="game-meta">
+            <div class="game-title">Bloodborne</div>
+            <div class="game-sub">36 Hours</div>
+          </div>
+        </button>
+
+        <button class="game-card" popovertarget="bf1-img">
+          <img src="images/games/bf1.jpg" alt="Battlefield 1 game cover">
+          <div class="game-meta">
+            <div class="game-title">Battlefield I</div>
+            <div class="game-sub">346 Hours</div>
+          </div>
+        </button>
       </div>
-    </a>
 
-    <a class="game-card" href="#">
-      <img src="images/games/game-03.jpg" alt="Game cover: Replace title">
-      <div class="game-meta">
-        <div class="game-title">Game Title</div>
-        <div class="game-sub">Installed</div>
+      <!-- popover for each game -->
+      <div id="deadlock-img" popover class="image-popover">
+        <img src="images/games/deadlock.jpg" alt="Deadlock enlarged">
+        <button popovertarget="deadlock-img" popovertargetaction="hide">✕</button>
       </div>
-    </a>
 
-    <a class="game-card" href="#">
-      <img src="images/games/game-04.jpg" alt="Game cover: Replace title">
-      <div class="game-meta">
-        <div class="game-title">Game Title</div>
-        <div class="game-sub">Not installed</div>
+      <div id="hades2-img" popover class="image-popover">
+        <img src="images/games/hades2.jpg" alt="Hades II enlarged">
+        <button popovertarget="hades2-img" popovertargetaction="hide">✕</button>
       </div>
-    </a>
-  </div>
-</section>
 
-<section class="shelf" aria-label="Favorites">
-  <div class="shelf-header">
-    <h3>Favorites</h3>
-    <a class="shelf-link" href="#">View all</a>
-  </div>
-
-  <div class="carousel" tabindex="0">
-    <a class="game-card" href="#">
-      <img src="images/games/game-05.jpg" alt="Game cover: Replace title">
-      <div class="game-meta">
-        <div class="game-title">Game Title</div>
-        <div class="game-sub">Favorite</div>
+      <div id="rdr2-img" popover class="image-popover">
+        <img src="images/games/rdr2.jpg" alt="RDR2 enlarged">
+        <button popovertarget="rdr2-img" popovertargetaction="hide">✕</button>
       </div>
-    </a>
 
-    <a class="game-card" href="#">
-      <img src="images/games/game-06.jpg" alt="Game cover: Replace title">
-      <div class="game-meta">
-        <div class="game-title">Game Title</div>
-        <div class="game-sub">Favorite</div>
+      <div id="dmc-img" popover class="image-popover">
+        <img src="images/games/dmchd.jpg" alt="DMC HD enlarged">
+        <button popovertarget="dmc-img" popovertargetaction="hide">✕</button>
       </div>
-    </a>
-  </div>
-</section>
+
+      <div id="alice-img" popover class="image-popover">
+        <img src="images/games/amr2.jpg" alt="Alice enlarged">
+        <button popovertarget="alice-img" popovertargetaction="hide">✕</button>
+      </div>
+
+      <div id="frostpunk-img" popover class="image-popover">
+        <img src="images/games/frostpunk.jpg" alt="Frostpunk enlarged">
+        <button popovertarget="frostpunk-img" popovertargetaction="hide">✕</button>
+      </div>
+
+      <div id="bloodborne-img" popover class="image-popover">
+        <img src="images/games/bloodborne.jpg" alt="Bloodborne enlarged">
+        <button popovertarget="bloodborne-img" popovertargetaction="hide">✕</button>
+      </div>
+
+      <div id="bf1-img" popover class="image-popover">
+        <img src="images/games/bf1.jpg" alt="BF1 enlarged">
+        <button popovertarget="bf1-img" popovertargetaction="hide">✕</button>
+      </div>
+    </section>
+
+    <div id="recentGamesPopover" popover class="games-popover">
+      <h4>All Recently Played Games</h4>
+      <ul class="game-list">
+        <li>
+          <strong>Deadlock</strong> - Last played: Today
+          <meter value="100" min="0" max="100">Active</meter>
+        </li>
+        <li>
+          <strong>Hades II</strong> - 46.4 Hours
+          <meter value="65" min="0" max="100">65% complete</meter>
+        </li>
+        <li>
+          <strong>Red Dead Redemption 2</strong> - 13.6 Hours
+          <meter value="20" min="0" max="100">20% complete</meter>
+        </li>
+        <li>
+          <strong>Devil May Cry HD Collection</strong> - 10.9 Hours
+          <meter value="30" min="0" max="100">30% complete</meter>
+        </li>
+        <li>
+          <strong>Alice: Madness Returns</strong> - 12.8 Hours
+          <meter value="40" min="0" max="100">40% complete</meter>
+        </li>
+        <li>
+          <strong>Frostpunk</strong> - 15.5 Hours
+          <meter value="50" min="0" max="100">50% complete</meter>
+        </li>
+        <li>
+          <strong>Bloodborne</strong> - 36 Hours
+          <meter value="85" min="0" max="100">85% complete</meter>
+        </li>
+        <li>
+          <strong>Battlefield 1</strong> - 346 Hours
+          <meter value="100" min="0" max="100">Mastered</meter>
+        </li>
+      </ul>
+      <button popovertarget="recentGamesPopover" popovertargetaction="hide">Close</button>
+    </div>
+
+    <!-- Favorites -->
+    <section class="shelf" aria-label="Favorites">
+      <div class="shelf-header">
+        <h3>Favorites</h3>
+        <button class="shelf-link" popovertarget="favoritesPopover">View all</button>
+      </div>
+
+      <div class="carousel" tabindex="0">
+        <button class="game-card" popovertarget="bloodborne-fav-img">
+          <img src="images/games/bloodborne.jpg" alt="Bloodborne game cover">
+          <div class="game-meta">
+            <div class="game-title">Bloodborne</div>
+            <div class="game-sub">Favorite</div>
+          </div>
+        </button>
+
+        <div id="bloodborne-fav-img" popover class="image-popover">
+          <img src="images/games/bloodborne.jpg" alt="Bloodborne enlarged">
+          <button popovertarget="bloodborne-fav-img" popovertargetaction="hide">✕</button>
+        </div>
+
+        <button class="game-card" popovertarget="alice-fav-img">
+          <img src="images/games/amr1.jpg" alt="Alice: Madness Returns game cover">
+          <div class="game-meta">
+            <div class="game-title">Alice: Madness Returns</div>
+            <div class="game-sub">Favorite</div>
+          </div>
+        </button>
+
+        <div id="alice-fav-img" popover class="image-popover">
+          <img src="images/games/amr1.jpg" alt="Alice enlarged">
+          <button popovertarget="alice-fav-img" popovertargetaction="hide">✕</button>
+        </div>
+
+        <button class="game-card" popovertarget="bf1-fav-img">
+          <img src="images/games/bf1.jpg" alt="Battlefield 1 game cover">
+          <div class="game-meta">
+            <div class="game-title">Battlefield I</div>
+            <div class="game-sub">Favorite</div>
+          </div>
+        </button>
+
+        <div id="bf1-fav-img" popover class="image-popover">
+          <img src="images/games/bf1.jpg" alt="Battlefield 1 enlarged">
+          <button popovertarget="bf1-fav-img" popovertargetaction="hide">✕</button>
+        </div>
+
+      </div>
+    </section>
+
+    <div id="favoritesPopover" popover class="games-popover">
+      <h4>My Favorite Games</h4>
+      <p><strong>Bloodborne</strong> - The second gothic masterpiece, inspired by Victorian London, that defined the 8th console generation. Hidetaka Miyazaki left 8 million fans wanting a sequel that Sony will never green-light.</p>
+      <p><strong>Alice: Madness Returns</strong> - The first gothic masterpiece based on Lewis Campbell's Alice in Wonderland. A dark, twisted reimagining of Wonderland with stunning art direction and a shocking story.</p>
+      <p><strong>Battlefield 1</strong> - The closest triple A shooter has gotten to showcasing the horrors of the Great War, with perfect excellence in art, music, sound design, graphical fidelity, and chaotic horror. There will never be another made like it.</p>
+      <button popovertarget="favoritesPopover" popovertargetaction="hide">Close</button>
+    </div>
+
+    <section class="card">
+      <h3>Quick Add Game Card</h3>
+      <p>This demonstrates the <code>&lt;template&gt;</code> element. Enter a game name and click to add a card below:</p>
+
+      <div class="quick-add-form">
+        <input type="text" id="quickGameName" placeholder="Enter game name..." />
+        <button onclick="quickAddGame()">+ Add Card</button>
+      </div>
+
+      <div id="quickAddContainer" class="carousel"></div>
+    </section>
+
+    <template id="gameCardTemplate">
+      <a class="game-card" href="#">
+        <img src="images/games/placeholder.jpg" alt="Game cover">
+        <div class="game-meta">
+          <div class="game-title"></div>
+          <div class="game-sub">Just added</div>
+          <meter value="0" min="0" max="100" low="25" high="75" optimum="100">0%</meter>
+          <output>0% complete</output>
+        </div>
+      </a>
+    </template>
+
+  </article>
+</main>
+
+<div id="loadingOverlay" class="loading-overlay" inert hidden>
+  <div class="spinner"></div>
+  <p>Loading content...</p>
+</div>
+
+<footer role="contentinfo">
+  <p><a href="http://www.csun.edu" title="csun.edu" target="_blank" rel="noopener">CSUN</a> 18111 Nordhoff St Northridge, CA 91330</p>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+
+  function quickAddGame() {
+    const gameName = document.getElementById('quickGameName').value.trim();
+
+    if (!gameName) {
+      alert('Please enter a game name!');
+      return;
+    }
+
+    const template = document.getElementById('gameCardTemplate');
+
+    const clone = template.content.cloneNode(true);
+
+    clone.querySelector('.game-title').textContent = gameName;
+
+    const randomProgress = Math.floor(Math.random() * 100);
+    clone.querySelector('meter').value = randomProgress;
+    clone.querySelector('output').textContent = `${randomProgress}% complete`;
+
+    document.getElementById('quickAddContainer').appendChild(clone);
+
+    document.getElementById('quickGameName').value = '';
+  }
+
+  document.getElementById('quickGameName')?.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      quickAddGame();
+    }
+  });
+</script>
+
+</body>
+</html>

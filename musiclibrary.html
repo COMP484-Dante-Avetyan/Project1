@@ -24,31 +24,74 @@
 
 <main role="main" class="container">
   <article role="article">
+
     <section class="card">
-      <h3>On Repeat</h3>
+      <h3>Repeat</h3>
       <ul class="simple-list">
-        <li><strong>Artist — Album / Track</strong> — quick note</li>
-        <li><strong>Artist — Album / Track</strong> — quick note</li>
+        <li><strong>Daft Punk — Single / Infinity Repeating</strong> — feat. Julian Casablancas & The Voidz</li>
+        <li><strong>TOOL — 10,000 Days / Right In Two</strong> — Repugnance is being unable to look up at the heavens</li>
+        <li><strong>VIZA — Eros / How Can I?</strong></li>
+        <li><strong>TOOL — Undertow / Sober</strong></li>
+        <li><strong>Rammstein — Reise, Reise / Amour </strong></li>
+        <li><strong>TOOL — Lateralus / The Grudge </strong></li>
+        <li><strong>Death From Above 1979 — The Physical World / Nothing Left</strong></li>
       </ul>
     </section>
+
+    <aside role="complementary">
+      <h3>Listening Stats</h3>
+
+      <div class="stat-item">
+        <label for="hours-listened">Hours This Month:</label>
+        <meter id="hours-listened" value="32" min="0" max="40" low="32" high="32" optimum="32">120 hours</meter>
+        <output for="hours-listened">32 hours</output>
+      </div>
+
+      <div class="stat-item">
+        <label for="albums-completed">Albums Completed:</label>
+        <meter id="albums-completed" value="31" min="0" max="40" low="31" high="31" optimum="31">15 albums</meter>
+        <output for="albums-completed">31/40 albums</output>
+      </div>
+
+      <button popovertarget="genreBreakdown">📊 View Genre Breakdown</button>
+
+      <!-- Popover for detailed genre information -->
+      <div id="genreBreakdown" popover>
+        <h4>Genre Breakdown</h4>
+        <p><strong>Electronic:</strong> 40%</p>
+        <p><strong>Hip Hop:</strong> 25%</p>
+        <p><strong>Jazz:</strong> 20%</p>
+        <p><strong>Classical:</strong> 10%</p>
+        <p><strong>Other:</strong> 5%</p>
+        <button popovertarget="genreBreakdown" popovertargetaction="hide">Close</button>
+      </div>
+    </aside>
 
     <section class="card">
       <h3>Playlists</h3>
       <ul class="simple-list">
-        <li><strong>Playlist Name</strong> — mood / purpose</li>
-        <li><strong>Playlist Name</strong> — mood / purpose</li>
+        <li><strong>Artist / Playlist Name</strong> — mood / purpose</li>
+        <li><strong>VIZA / Eros</strong> — Sorrowful / Lamenting</li>
+        <li><strong>VIZA / The Unorthodox Revival I/II</strong> — Lamentful / Sorrowing</li>
       </ul>
     </section>
-
-    <section class="card">
-      <h3>Study / Inspiration</h3>
-      <p>Add notes about what you’re analyzing: harmony, sound design, rhythm, production, etc.</p>
-    </section>
   </article>
+
+  <!--<section class="card">
+    <h3>Study / Inspiration</h3>
+    <p>Add notes about what you're analyzing: harmony, sound design, rhythm, production, etc.</p>
+  </section>-->
 </main>
 
+<div id="loadingOverlay" class="loading-overlay" inert>
+<div class="spinner"></div>
+<p>Loading content...</p>
+</div>
+
+<script src="script.js"></script>
+
 <footer role="contentinfo">
-  <p><a href="http://www.csun.edu" title="csun.edu" target="_blank" rel="noopener">CSUN</a> 18111 Nordhoff St Northridge, CA 91330</p>
+<p><a href="http://www.csun.edu" title="csun.edu" target="_blank" rel="noopener">CSUN</a> 18111 Nordhoff St Northridge, CA 91330</p>
 </footer>
 </body>
 </html>

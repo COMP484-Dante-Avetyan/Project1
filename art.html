@@ -30,8 +30,10 @@
     </section>
 
     <section class="gallery" aria-label="Art gallery">
+
+      <!-- Using fetchpriority="high" on first image for faster above-the-fold loading -->
       <figure class="art-tile">
-        <img src="images/art/art-01.jpg" alt="Artwork 1 (replace this alt text)">
+        <img src="images/art/art-01.jpg" alt="Artwork 1 (replace this alt text)" fetchpriority="high">
         <figcaption><strong>Title of Piece</strong><br><span class="muted">Medium • Year</span></figcaption>
       </figure>
 
@@ -63,10 +65,17 @@
 
     <section class="card">
       <h3>Notes</h3>
-      <p>Add a short paragraph for each series (themes, process, inspiration), or a “work in progress” list.</p>
+      <p>Add a short paragraph for each series (themes, process, inspiration), or a "work in progress" list.</p>
     </section>
   </article>
 </main>
+
+<div id="loadingOverlay" class="loading-overlay" inert>
+  <div class="spinner"></div>
+  <p>Loading content...</p>
+</div>
+
+<script src="script.js"></script>
 
 <footer role="contentinfo">
   <p><a href="http://www.csun.edu" title="csun.edu" target="_blank" rel="noopener">CSUN</a> 18111 Nordhoff St Northridge, CA 91330</p>
