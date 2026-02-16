@@ -29,31 +29,25 @@
 <main role="main" class="container">
   <article role="article">
 
-    <!-- ELEMENT 1: <aside> -->
-    <!-- Used here to display site statistics and quick tips in a complementary sidebar -->
-    <!-- The aside element is semantically appropriate for tangentially related content -->
+    <!-- <aside> -->
+    <!-- Displays site statistics -->
     <aside class="home-stats" role="complementary">
       <h3>Site Stats</h3>
 
-      <!-- ELEMENT 2: <meter> (First usage) -->
+      <!-- <meter> -->
       <!-- Displays art portfolio completion as a visual gauge -->
-      <!-- Meter is perfect for showing scalar measurements within a known range -->
       <div class="stat-item">
         <label for="art-progress">Portfolio Completion:</label>
         <meter id="art-progress" value="100" min="0" max="100" low="30" high="70" optimum="100">65%</meter>
         <output for="art-progress">100%</output>
       </div>
 
-      <!-- ELEMENT 2: <meter> (Second usage) -->
-      <!-- Shows game library organization progress -->
       <div class="stat-item">
         <label for="game-organization">Game Library:</label>
         <meter id="game-organization" value="8" min="8" max="220" low="25" high="75" optimum="100">42%</meter>
         <output for="game-organization">8/220 Games Catalogued</output>
       </div>
 
-      <!-- ELEMENT 2: <meter> (Third usage) -->
-      <!-- Indicates music library curation status -->
       <div class="stat-item">
         <label for="music-curation">Music Curation:</label>
         <meter id="music-curation" value="31" min="0" max="40" low="10" high="35" optimum="30">88%</meter>
@@ -62,9 +56,8 @@
 
       <button id="statsInfoBtn" popovertarget="statsPopover">ℹ️ Learn More</button>
 
-      <!-- ATTRIBUTE 2: popover -->
-      <!-- Creates a native popover dialog with detailed stats explanation -->
-      <!-- Popover provides accessible, dismissible overlay content without JavaScript -->
+      <!-- popover -->
+      <!-- Creates a native popover with detailed stats explanation without Javascript -->
       <div id="statsPopover" popover>
         <h4>About These Stats</h4>
         <p><strong>Portfolio Completion:</strong> Percentage of planned artworks uploaded to the gallery.</p>

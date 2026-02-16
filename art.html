@@ -26,46 +26,95 @@
   <article role="article">
     <section class="card">
       <h3>Featured</h3>
-      <p>Replace the placeholder image paths with your real files (example: <code>images/art/art-01.jpg</code>).</p>
     </section>
 
     <section class="gallery" aria-label="Art gallery">
 
       <!-- Using fetchpriority="high" on first image for faster above-the-fold loading -->
+      <!--
       <figure class="art-tile">
-        <img src="images/art/art-01.jpg" alt="Artwork 1 (replace this alt text)" fetchpriority="high">
-        <figcaption><strong>Title of Piece</strong><br><span class="muted">Medium • Year</span></figcaption>
-      </figure>
+        <img src="images/art/rosebird.jpg" alt="Artwork 1 (replace this alt text)" fetchpriority="high">
+        <figcaption><strong>Rose Bird</strong><br><span class="muted">Digital • 2024</span></figcaption>
+      </figure>-->
 
-      <figure class="art-tile">
-        <img src="images/art/art-02.jpg" alt="Artwork 2 (replace this alt text)">
-        <figcaption><strong>Title of Piece</strong><br><span class="muted">Medium • Year</span></figcaption>
-      </figure>
+      <button class="art-tile" popovertarget="rose-bird" alt="(replace this alt text)" fetchpriority="high">
+        <img src="images/art/rosebird.jpg" alt="">
+        <div class="game-meta">
+          <p><strong>Rose Bird</strong><br><span class="">Digital • 2024</span></p>
+        </div>
+      </button>
 
-      <figure class="art-tile">
-        <img src="images/art/art-03.jpg" alt="Artwork 3 (replace this alt text)">
-        <figcaption><strong>Title of Piece</strong><br><span class="muted">Medium • Year</span></figcaption>
-      </figure>
+      <div id="rose-bird" popover class="image-popover">
+        <img src="images/art/rosebird.jpg" alt="">
+        <button popovertarget="rose-bird" popovertargetaction="hide">✕</button>
+      </div>
+      <!---->
+      <button class="art-tile" popovertarget="cristos-hand" alt="(replace this alt text)" fetchpriority="high">
+        <img src="images/art/hand.jpg" alt="">
+        <div class="game-meta">
+          <p><strong>Cristo's Puppet</strong><br><span class="">Digital • 2024</span></p>
+        </div>
+      </button>
 
-      <figure class="art-tile">
-        <img src="images/art/art-04.jpg" alt="Artwork 4 (replace this alt text)">
-        <figcaption><strong>Title of Piece</strong><br><span class="muted">Medium • Year</span></figcaption>
-      </figure>
+      <div id="cristos-hand" popover class="image-popover">
+        <img src="images/art/rosebird.jpg" alt="">
+        <button popovertarget="cristos-hand" popovertargetaction="hide">✕</button>
+      </div>
+      <!---->
+      <button class="art-tile" popovertarget="rose" alt="(replace this alt text)" fetchpriority="high">
+        <img src="images/art/rose.jpg" alt="">
+        <div class="game-meta">
+          <p><strong>Rose</strong><br><span class="">Pencil • 2024</span></p>
+        </div>
+      </button>
 
-      <figure class="art-tile">
-        <img src="images/art/art-05.jpg" alt="Artwork 5 (replace this alt text)">
-        <figcaption><strong>Title of Piece</strong><br><span class="muted">Medium • Year</span></figcaption>
-      </figure>
+      <div id="rose" popover class="image-popover">
+        <img src="images/art/rosebird.jpg" alt="">
+        <button popovertarget="rose" popovertargetaction="hide">✕</button>
+      </div>
+      <!---->
+      <button class="art-tile" popovertarget="song-bird" alt="(replace this alt text)" fetchpriority="high">
+        <img src="images/art/bird.jpg" alt="">
+        <div class="game-meta">
+          <p><strong>Song Bird</strong><br><span class="">Pencil • 2024</span></p>
+        </div>
+      </button>
 
-      <figure class="art-tile">
-        <img src="images/art/art-06.jpg" alt="Artwork 6 (replace this alt text)">
-        <figcaption><strong>Title of Piece</strong><br><span class="muted">Medium • Year</span></figcaption>
-      </figure>
+      <div id="song-bird" popover class="image-popover">
+        <img src="images/art/bird.jpg" alt="">
+        <button popovertarget="song-bird" popovertargetaction="hide">✕</button>
+      </div>
+      <!---->
+      <button class="art-tile" popovertarget="lady" alt="(replace this alt text)" fetchpriority="high">
+        <img src="images/art/lady.jpg" alt="">
+        <div class="game-meta">
+          <p><strong>Contrasting Lady</strong><br><span class="">Digital • 2023</span></p>
+        </div>
+      </button>
+
+      <div id="lady" popover class="image-popover">
+        <img src="images/art/lady.jpg" alt="">
+        <button popovertarget="lady" popovertargetaction="hide">✕</button>
+      </div>
+      <!---->
+      <!---->
+      <button class="art-tile" popovertarget="lantern" alt="(replace this alt text)" fetchpriority="high">
+        <img src="images/art/lantern.jpg" alt="">
+        <div class="game-meta">
+          <p><strong>The Church's Lady</strong><br><span class="">Digital • 2024</span></p>
+        </div>
+      </button>
+
+      <div id="lantern" popover class="image-popover">
+        <img src="images/art/lantern.jpg" alt="">
+        <button popovertarget="lantern" popovertargetaction="hide">✕</button>
+      </div>
+      <!---->
     </section>
 
     <section class="card">
       <h3>Notes</h3>
-      <p>Add a short paragraph for each series (themes, process, inspiration), or a "work in progress" list.</p>
+      <p>A digital painting of a French officer is in progress, 2025.</p>
     </section>
   </article>
 </main>
